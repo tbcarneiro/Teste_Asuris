@@ -1,0 +1,13 @@
+﻿<div ng-controller="listaController">
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+        </tr>
+        <tr ng-repeat="cliente in clientes">
+            <td>{{cliente.Nome}}</td>
+            <td>
+                <a href="#/detalhes/{{cliente.Id}}">Detalhes</a>
+            </td>
+        </tr>
+    </table>
+</div>

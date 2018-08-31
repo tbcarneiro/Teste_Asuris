@@ -1,0 +1,41 @@
+﻿<div class="well">
+    <h4>Teste Thiago</h4>
+</div>
+
+<div ng-app="cliente" ng-controller="listaController">
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>E-mail</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="cliente in clientes">
+            <td>{{cliente.Nome}}</td>
+            <td>{{cliente.Telefone}}</td>
+            <td>{{cliente.Endereco}}</td>
+            <td>{{cliente.Email}}</td>
+            <td>
+                <a class="btn btn-primary" ng-click="editar(cliente)">Editar</a>
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="deleta(cliente)">Deletar</button>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-success" ng-click="criar()">Novo Cliente</button>
+    <div ng-include="'/Cliente/Html/edita.html'"></div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/AngularApp/js/Cliente.js"></script>
+    <script src="~/AngularApp/js/clienteService.js"></script>
+    <script src="~/AngularApp/js/listaController.js"></script>
+    <script src="~/AngularApp/js/detalhesController.js"></script>
+    <script src="~/AngularApp/js/editaController.js"></script>
+}
